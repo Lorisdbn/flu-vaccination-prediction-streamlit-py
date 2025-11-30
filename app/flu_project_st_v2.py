@@ -12,6 +12,7 @@ from sklearn.metrics import roc_curve, auc
 from pathlib import Path
 import pandas as pd
 import joblib
+import tensorflow as tf
 
 # ⚡ Première commande obligatoire
 st.set_page_config(
@@ -1205,6 +1206,7 @@ These findings, when implemented, could contribute to more effective vaccination
         st.image(image_path)
     else:
         st.error(f"Image {image_path} not found.")
+
 
 
 
