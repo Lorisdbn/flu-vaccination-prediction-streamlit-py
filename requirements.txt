@@ -9,5 +9,3 @@ xgboost
 optuna
 joblib
 
-# à garder UNIQUEMENT si tu utilises vraiment un modèle tf.keras dans l'app :
-tensorflow==2.17.0
