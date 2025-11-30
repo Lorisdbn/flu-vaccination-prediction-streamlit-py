@@ -12,3 +12,5 @@ matplotlib
 plotly
 scipy
 pillow
+tensorflow==2.20.0
+
