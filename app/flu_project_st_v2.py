@@ -104,20 +104,29 @@ def apply_plotly_style(fig):
     )
     return fig
 
+# ===== Paths =====
+# dossier du script : .../app
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# racine du projet : on remonte d'un niveau
+project_root = os.path.dirname(script_dir)
+
+DATA_DIR = os.path.join(project_root, "data")
+MODELS_DIR = os.path.join(project_root, "models")
+
 # ===== Load models =====
-h1n1_model = load_model('h1n1_vaccine_neuronalmodel.pkl')
-seasonal_model = load_model('seasonal_vaccine_neuronalmodel.pkl')
+h1n1_model = load_model(os.path.join(MODELS_DIR, "h1n1_vaccine_neuronalmodel.pkl"))
+seasonal_model = load_model(os.path.join(MODELS_DIR, "seasonal_vaccine_neuronalmodel.pkl"))
 
 # ===== Load datasets =====
-script_dir = os.path.dirname(os.path.abspath(__file__))
 datasets = {
-    "test_features_processed": os.path.join(script_dir, "test_features_processed.csv"),
-    "test_set_features": os.path.join(script_dir, "test_set_features.csv"),
-    "test_set_labels": os.path.join(script_dir, "test_set_labels.csv"),
-    "training_set": os.path.join(script_dir, "training_set.csv"),
-    "training_set_features": os.path.join(script_dir, "training_set_features.csv"),
-    "training_set_labels": os.path.join(script_dir, "training_set_labels.csv"),
-    "training_set_processed": os.path.join(script_dir, "training_set_processed.csv")
+    "test_features_processed": os.path.join(DATA_DIR, "test_features_processed.csv"),
+    "test_set_features": os.path.join(DATA_DIR, "test_set_features.csv"),
+    "test_set_labels": os.path.join(DATA_DIR, "test_set_labels.csv"),
+    "training_set": os.path.join(DATA_DIR, "training_set.csv"),
+    "training_set_features": os.path.join(DATA_DIR, "training_set_features.csv"),
+    "training_set_labels": os.path.join(DATA_DIR, "training_set_labels.csv"),
+    "training_set_processed": os.path.join(DATA_DIR, "training_set_processed.csv"),
 }
 
 test_features_processed = load_csv(datasets["test_features_processed"])
@@ -127,6 +136,7 @@ training_set = load_csv(datasets["training_set"])
 training_set_features = load_csv(datasets["training_set_features"])
 training_set_labels = load_csv(datasets["training_set_labels"])
 training_set_processed = load_csv(datasets["training_set_processed"])
+
 
 # Set title of the app
 st.title("H1N1 / Seasonal flu vaccines learning and predictions")
@@ -1195,5 +1205,6 @@ These findings, when implemented, could contribute to more effective vaccination
         st.image(image_path)
     else:
         st.error(f"Image {image_path} not found.")
+
 
 
