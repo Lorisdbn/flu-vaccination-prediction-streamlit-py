@@ -9,3 +9,6 @@ xgboost
 optuna
 joblib
 matplotlib
+plotly
+scipy
+pillow
