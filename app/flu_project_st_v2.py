@@ -3,7 +3,6 @@ import pickle
 import streamlit as st
 import pandas as pd
 import warnings
-import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
@@ -1193,3 +1192,4 @@ These findings, when implemented, could contribute to more effective vaccination
         st.image(image_path)
     else:
         st.error(f"Image {image_path} not found.")
+
