@@ -217,7 +217,7 @@ This systematic approach allowed us to effectively analyze the dataset and make 
 elif page == pages[1]:
 
     if _missing_data_warning(training_set, training_set_processed):
-    st.stop()
+        st.stop()
 
     st.markdown("<h2 style='text-align: center;'>Dataset overview</h2>", unsafe_allow_html=True)
     # Proceed with data exploration and analysis
