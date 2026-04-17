@@ -459,7 +459,7 @@ Further exploration could involve more detailed feature engineering, investigati
 
 elif page == pages[2]:
     if _missing_data_warning(training_set, training_set_processed):
-    st.stop()
+        st.stop()
     st.markdown("<h2 style='text-align: center;'>Data visualization</h2>", unsafe_allow_html=True)
 
     st.markdown("""**Let's start our visualization to get insightful information about our data**""", unsafe_allow_html=True)
@@ -949,7 +949,7 @@ elif page == pages[2]:
 
 elif page == pages[3]:
     if _missing_data_warning(training_set, training_set_processed):
-    st.stop()
+        st.stop()
     st.markdown("<h2 style='text-align: center;'>Data processing</h2>", unsafe_allow_html=True)
 
     st.markdown("""**After having explored the training dataset, we will now process the data to make it ready for machine learning training**""", unsafe_allow_html=True)
@@ -1016,7 +1016,7 @@ The same preprocessing steps have also been applied to the test dataset to guara
 
 elif page == pages[4]:
     if _missing_data_warning(test_features_processed):
-    st.stop()
+        st.stop()
     st.markdown("<h2 style='text-align: center;'>Data modelling</h2>", unsafe_allow_html=True)
     st.markdown(""" **Various models have been trained on the processed training set to get the most relevant predictions on the test set, aiming to predict whether a specific patient will get vaccinated for the H1N1 and/or the seasonal flu virus**""", unsafe_allow_html=True)
     with st.expander("We trained the following models as part of our analysis:"):
