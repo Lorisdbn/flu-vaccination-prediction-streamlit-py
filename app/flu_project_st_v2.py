@@ -105,8 +105,8 @@ def apply_plotly_style(fig):
     fig.update_layout(
         font=dict(color="black"),
         legend=dict(font=dict(color="black")),
-        xaxis=dict(titlefont=dict(color="black"), tickfont=dict(color="black")),
-        yaxis=dict(titlefont=dict(color="black"), tickfont=dict(color="black")),
+        xaxis=dict(title_font=dict(color="black"), tickfont=dict(color="black")),
+        yaxis=dict(title_font=dict(color="black"), tickfont=dict(color="black")),
         plot_bgcolor="white",
         paper_bgcolor="white"
     )
@@ -491,14 +491,14 @@ elif page == pages[2]:
         barmode='overlay',
         xaxis=dict(
             title='Number of respondents',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black'),
             tickvals=[-500, -250, 0, 250, 500],
             ticktext=[500, 250, 0, 250, 500]
         ),
         yaxis=dict(
             title='Age group',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),
@@ -541,14 +541,14 @@ elif page == pages[2]:
         barmode='overlay',
         xaxis=dict(
             title='Number of respondents',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black'),
             tickvals=[-500, -250, 0, 250, 500],
             ticktext=[500, 250, 0, 250, 500]
         ),
         yaxis=dict(
             title='Race',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte général noir
@@ -584,13 +584,13 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Features',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black'),
             tickangle=-45
         ),
         yaxis=dict(
             title='H1N1 vaccine',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),
@@ -615,13 +615,13 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Features',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black'),
             tickangle=-45
         ),
         yaxis=dict(
             title='Seasonal vaccine',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),
@@ -671,12 +671,12 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Percentage of respondents',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='Level of concern',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte général en noir
@@ -729,12 +729,12 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Percentage of respondents',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='Level of knowledge',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte global noir
@@ -779,12 +779,12 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Age group',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='Percentage of respondents',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Couleur générale noire
@@ -828,12 +828,12 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Age group',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='Vaccination rate',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black'),
             tickformat='%'
         ),
@@ -873,12 +873,12 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Doctor recommendation for H1N1 vaccine',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='Vaccination Rate (%)',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte général noir
@@ -921,12 +921,12 @@ elif page == pages[2]:
         ),
         xaxis=dict(
             title='Perceived H1N1 vaccine effectiveness',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='Vaccination rate (%)',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte général noir
@@ -1088,12 +1088,12 @@ elif page == pages[4]:
         ),
         xaxis=dict(
             title='False Positive Rate (FPR)',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='True Positive Rate (TPR)',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte général en noir
@@ -1131,12 +1131,12 @@ elif page == pages[4]:
         ),
         xaxis=dict(
             title='',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte global noir
@@ -1166,12 +1166,12 @@ elif page == pages[4]:
         ),
         xaxis=dict(
             title='',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         yaxis=dict(
             title='',
-            titlefont=dict(color='black'),
+            title_font=dict(color='black'),
             tickfont=dict(color='black')
         ),
         font=dict(color='black'),  # Texte général noir
