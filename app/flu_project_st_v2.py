@@ -91,8 +91,15 @@ def load_csv(file_name):
     try:
         return pd.read_csv(file_name)
     except FileNotFoundError:
-        st.error(f"File {file_name} not found.")
         return None
+    except pd.errors.EmptyDataError:
+        return None
+    
+def _missing_data_warning(*dfs):
+    if any(df is None or (isinstance(df, pd.DataFrame) and df.empty) for df in dfs):
+        st.warning("**Données manquantes.** Les fichiers CSV de features sont absents.")
+        return True
+    return False
 
 def apply_plotly_style(fig):
     fig.update_layout(
@@ -183,7 +190,7 @@ if page == pages[0]:
     st.write("In this project, we explore vaccination, a crucial public health strategy in the fight against infectious diseases. Vaccines not only protect individuals by providing immunization but also contribute to herd immunity, which helps curb the spread of diseases within a community.")
     # Display the image
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    image_path = os.path.join(script_dir, 'vaccin1.jpg')
+    image_path = os.path.join(project_root, 'pics', 'vaccin1.jpg')
     if os.path.exists(image_path):
         st.image(image_path)
     else:
@@ -208,6 +215,10 @@ This systematic approach allowed us to effectively analyze the dataset and make 
 """)
 
 elif page == pages[1]:
+
+    if _missing_data_warning(training_set, training_set_processed):
+    st.stop()
+
     st.markdown("<h2 style='text-align: center;'>Dataset overview</h2>", unsafe_allow_html=True)
     # Proceed with data exploration and analysis
 
@@ -447,6 +458,8 @@ Further exploration could involve more detailed feature engineering, investigati
 """)
 
 elif page == pages[2]:
+    if _missing_data_warning(training_set, training_set_processed):
+    st.stop()
     st.markdown("<h2 style='text-align: center;'>Data visualization</h2>", unsafe_allow_html=True)
 
     st.markdown("""**Let's start our visualization to get insightful information about our data**""", unsafe_allow_html=True)
@@ -935,6 +948,8 @@ elif page == pages[2]:
                 increasing vaccination rates and improving public health outcomes.""", unsafe_allow_html=True)
 
 elif page == pages[3]:
+    if _missing_data_warning(training_set, training_set_processed):
+    st.stop()
     st.markdown("<h2 style='text-align: center;'>Data processing</h2>", unsafe_allow_html=True)
 
     st.markdown("""**After having explored the training dataset, we will now process the data to make it ready for machine learning training**""", unsafe_allow_html=True)
@@ -1000,6 +1015,8 @@ The same preprocessing steps have also been applied to the test dataset to guara
 
 
 elif page == pages[4]:
+    if _missing_data_warning(test_features_processed):
+    st.stop()
     st.markdown("<h2 style='text-align: center;'>Data modelling</h2>", unsafe_allow_html=True)
     st.markdown(""" **Various models have been trained on the processed training set to get the most relevant predictions on the test set, aiming to predict whether a specific patient will get vaccinated for the H1N1 and/or the seasonal flu virus**""", unsafe_allow_html=True)
     with st.expander("We trained the following models as part of our analysis:"):
@@ -1201,7 +1218,7 @@ The steps and methodologies used in this project were meticulously applied to bo
 These findings, when implemented, could contribute to more effective vaccination campaigns, ultimately leading to **higher vaccination rates** and better **public health outcomes**.""")
     # Display the image
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    image_path = os.path.join(script_dir, 'vaccin2.jpg')
+    image_path = os.path.join(project_root, 'pics', 'vaccin1.jpg')
     if os.path.exists(image_path):
         st.image(image_path)
     else:
